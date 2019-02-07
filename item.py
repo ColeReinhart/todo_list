@@ -1,12 +1,11 @@
 import manager
 import time
 class Item(object):
-    self.complete = complete
     # time stamp
     # boolean(completed)
     # todo item
     def todo_add(thing):
-        complete = "Not Complete"
+        completed = "Not Complete"
         print([thing, completed, time.strftime('%a %H:%M:%S')], file=open("todos.txt", "a"))
         print(open("todos.txt", "r").read())
         f.close()
@@ -28,10 +27,12 @@ class Item(object):
         f = open("todos.txt", "r+")
         d = f.readlines()
         f.seek(0)
-        for i in d:
-            if not choice in i:
-                f.write(i)
-                
+        for line in d:
+            if not choice in line:
+                f.write(line)
+        for line in d:
+            if not choice in line:
+                Item.todo_add(choice)
         f.truncate()
         f.close()
         manager.Manager.manage('self')

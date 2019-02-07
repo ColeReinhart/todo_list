@@ -1,1 +1,2 @@
-
+['thing', 'Not Complete', 'Thu 16:08:15']
+['zach give me an a', 'Not Complete', 'Thu 16:22:37']
