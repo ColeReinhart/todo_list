@@ -13,26 +13,24 @@ class Manager(object):
         choice = input("> ")
         if choice == "1":
             #show the list
-            print(f.read())
-            choice = input("Mark complete?:")
-            item.Item.complete(choice)
-            
-            
-
+            print(open("todos.txt", "r").read())
+            Manager.manage(self)
             
         elif choice == "2":
             Manager.add()
 
         elif choice == "3":
             # Show completed tasks
-            print(h.read())
-            Manager.manage(self)
+            print(read_f)
+            choice = input("> ")
+            item.Item.complete(choice)
             
         elif choice == "4":
             #remove
             Manager.remove()
         elif choice == "5":
-            exit(1)    
+            f.close()
+            exit(1) 
         else:
             print("invalid input")
             Manager.manage(self)
@@ -41,8 +39,14 @@ class Manager(object):
         item.Item.todo_add(choice)
     
     def remove():
+        print(f.read())
         dif = input("What would you like to remove?:")
-        item.Item.todo_remove(dif)
+        if dif == "":
+            Manager.manage("self")
+            f.close()
 
-h = open("completed.txt", "r")
-f = open("todos.txt", "r")
+        else:
+            item.Item.todo_remove(dif)
+
+f = open("todos.txt", "r+")
+read_f = f.read()

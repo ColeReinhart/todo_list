@@ -1,15 +1,17 @@
 import manager
 import time
 class Item(object):
-    
+    self.complete = complete
     # time stamp
     # boolean(completed)
     # todo item
     def todo_add(thing):
-        completed = "Not Complete"
+        complete = "Not Complete"
         print([thing, completed, time.strftime('%a %H:%M:%S')], file=open("todos.txt", "a"))
-        manager.Manager.manage('self')
+        print(open("todos.txt", "r").read())
         f.close()
+        manager.Manager.manage('self')
+        
     def todo_remove(stuff):
         f = open("todos.txt", "r+")
         d = f.readlines()
@@ -22,20 +24,19 @@ class Item(object):
         manager.Manager.manage('self')
 
 
-    def complete(task):
+    def complete(choice):
         f = open("todos.txt", "r+")
         d = f.readlines()
         f.seek(0)
         for i in d:
-            if task in i:
+            if not choice in i:
                 f.write(i)
+                
         f.truncate()
         f.close()
-        completed = "Complete"
-        if task in lines:
-            print(lines, file=open("completed.txt", "a"))
         manager.Manager.manage('self')
-f = open("todos.txt", "r")
 
+f = open("todos.txt", "r")
+read_f = f.read()
 lines = f.readlines()
 
