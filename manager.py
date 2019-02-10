@@ -21,7 +21,7 @@ class Manager(object):
 
         elif choice == "3":
             # Show completed tasks
-            print(read_f)
+            print(open("todos.txt", "r").read())
             choice = input("> ")
             item.Item.complete(choice)
             

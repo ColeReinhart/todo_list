@@ -1,2 +1,2 @@
-['thing', 'Not Complete', 'Thu 16:08:15']
-['zach give me an a', 'Not Complete', 'Thu 16:22:37']
+['some stuff', 'completed', 'Sun 01:12:02']
+['ass', 'completed', 'Sun 01:12:11']

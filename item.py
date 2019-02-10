@@ -6,7 +6,8 @@ class Item(object):
     # todo item
     def todo_add(thing):
         completed = "Not Complete"
-        print([thing, completed, time.strftime('%a %H:%M:%S')], file=open("todos.txt", "a"))
+        values = [thing, completed, time.strftime('%a %H:%M:%S')]
+        print(values, file=open("todos.txt", "a"))
         print(open("todos.txt", "r").read())
         f.close()
         manager.Manager.manage('self')
@@ -20,19 +21,19 @@ class Item(object):
                 f.write(i)
         f.truncate()
         f.close()
-        manager.Manager.manage('self')
 
 
     def complete(choice):
         f = open("todos.txt", "r+")
         d = f.readlines()
         f.seek(0)
-        for line in d:
-            if not choice in line:
-                f.write(line)
-        for line in d:
-            if not choice in line:
-                Item.todo_add(choice)
+        for i in d:
+            if choice in i:
+                Item.todo_remove(choice)
+                values = [choice, "completed", time.strftime('%a %H:%M:%S')]
+                print(values, file=open("todos.txt", "a")) 
+                print(f.read())
+                      
         f.truncate()
         f.close()
         manager.Manager.manage('self')
