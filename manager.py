@@ -13,7 +13,7 @@ class Manager(object):
         choice = input("> ")
         if choice == "1":
             #show the list
-            print(open("todos.txt", "r").read())
+            item.Item.sort()
             Manager.manage(self)
             
         elif choice == "2":
@@ -21,7 +21,7 @@ class Manager(object):
 
         elif choice == "3":
             # Show completed tasks
-            print(open("todos.txt", "r").read())
+            item.Item.sort()
             choice = input("> ")
             item.Item.complete(choice)
             
