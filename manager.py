@@ -36,7 +36,8 @@ class Manager(object):
             Manager.manage(self)
     def add():
         choice = input("Add task here: ")
-        item.Item.todo_add(choice)
+        priority = input("priority level 1-5: ")
+        item.Item.todo_add(choice, priority)
     
     def remove():
         print(f.read())

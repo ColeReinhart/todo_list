@@ -4,11 +4,11 @@ class Item(object):
     # time stamp
     # boolean(completed)
     # todo item
-    def todo_add(thing):
+    def todo_add(thing, priority):
         completed = "Not Complete"
-        values = [thing, completed, time.strftime('%a %H:%M:%S')]
+        values = [priority, thing, completed, time.strftime('%a %H:%M:%S')]
         print(values, file=open("todos.txt", "a"))
-        print(open("todos.txt", "r").read())
+        Item.sort()
         f.close()
         manager.Manager.manage('self')
         
@@ -38,7 +38,13 @@ class Item(object):
         f.close()
         manager.Manager.manage('self')
 
+    def sort():
+        with open('todos.txt', 'r') as r:
+            for line in sorted(r):
+                print(line, end='')
 f = open("todos.txt", "r")
 read_f = f.read()
 lines = f.readlines()
+ 
 
+       
