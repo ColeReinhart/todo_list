@@ -13,7 +13,7 @@ class Manager(object):
         choice = input("> ")
         if choice == "1":
             #show the list
-            print(open("todos.txt", "r").read())
+            item.Item.sort()
             Manager.manage(self)
             
         elif choice == "2":
@@ -21,7 +21,7 @@ class Manager(object):
 
         elif choice == "3":
             # Show completed tasks
-            print(open("todos.txt", "r").read())
+            item.Item.sort()
             choice = input("> ")
             item.Item.complete(choice)
             
@@ -36,7 +36,8 @@ class Manager(object):
             Manager.manage(self)
     def add():
         choice = input("Add task here: ")
-        item.Item.todo_add(choice)
+        priority = input("priority level 1-5: ")
+        item.Item.todo_add(choice, priority)
     
     def remove():
         print(f.read())
